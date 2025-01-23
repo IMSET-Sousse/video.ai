@@ -1,17 +1,63 @@
-/* Video.module.css */
+:root {
+  --video-bg-color: #000;
+  --video-hover-scale: 1.05;
+  --video-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  --video-focus-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
 
 .videoPlayer {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    outline: none;
-    background: #000;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px; /* Slightly more rounded for a modern look */
+  box-shadow: var(--video-shadow);
+  outline: none;
+  background: var(--video-bg-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative; /* Allows for potential child elements or pseudo-elements */
+}
+
+/* Smooth hover effect */
+.videoPlayer:hover {
+  transform: scale(var(--video-hover-scale));
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Focus state for better accessibility */
+.videoPlayer:focus-visible {
+  box-shadow: var(--video-focus-shadow);
+}
+
+/* Add a subtle play button overlay effect */
+.videoPlayer::before {
+  content: "▶";
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Avoid interaction issues */
+}
+
+/* Hover to reveal the play button */
+.videoPlayer:hover::before {
+  opacity: 1;
+}
+
+/* Add a glowing edge effect on hover for a futuristic look */
+.videoPlayer:hover {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Dark mode customization */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --video-bg-color: #1a1a1a;
+    --video-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    --video-focus-shadow: 0px 0px 15px rgba(0, 128, 255, 0.8);
   }
-  
-  /* Ensures a smooth transition effect when hovered */
-  .videoPlayer:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease-in-out;
-  }
-  
+}
