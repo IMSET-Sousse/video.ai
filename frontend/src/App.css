@@ -1,49 +1,120 @@
 /* App.css */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Quicksand', sans-serif; /* Soft, rounded font */
+  background: linear-gradient(135deg, #d8f0d6, #c1e5c1); /* Lighter, airy green gradient */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  animation: bgAnimation 5s infinite alternate; /* Subtle background animation */
+}
+
+@keyframes bgAnimation {
+  0% {
+    background: linear-gradient(135deg, #d8f0d6, #c1e5c1);
+  }
+  100% {
+    background: linear-gradient(135deg, #c1e5c1, #d8f0d6);
+  }
 }
 
 div {
-  width: 80%;
-  max-width: 800px;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  width: 90%;
+  max-width: 1000px;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); /* Softer, more refined shadow */
+  border-radius: 20px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  background-image: url('https://example.com/garden-texture.jpg'); /* Optional textured background */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+div:hover {
+  transform: translateY(-15px); /* Smooth floating effect */
+  box-shadow: 0px 18px 30px rgba(0, 0, 0, 0.15); /* Larger, softer shadow */
+  filter: brightness(1.1); /* Slight brightness increase on hover */
 }
 
 .video-container {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
 }
 
 input, button {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 14px;
+  font-size: 18px;
+  border: 2px solid #a1c5a1; /* Earthy green border */
+  border-radius: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  background-color: #f1f8f1; /* Soft greenish background */
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: #3e8e41; /* Darker green for focus */
+  box-shadow: 0 0 15px rgba(62, 142, 65, 0.5); /* Glow effect */
+}
+
+input {
+  background-color: #f1f8f1;
 }
 
 button {
-  background-color: #007bff;
+  background-color: #4CAF50; /* Fresh garden green for button */
   color: white;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: scale(1.1); /* Slight grow effect */
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  background-color: #3b8e3b; /* Even darker green on click */
+  transform: scale(0.98); /* Slight shrink effect */
+}
+
+/* Advanced Button Effects */
+button:focus-visible {
+  outline: 3px solid #2e8b57; /* Focus-visible with a vibrant green */
+  outline-offset: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  div {
+    width: 95%;
+    padding: 20px;
+  }
+
+  input, button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+  div {
+    padding: 15px;
+  }
 }
