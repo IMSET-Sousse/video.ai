@@ -98,10 +98,12 @@
 -Sélection de la Résolution
 -Entrée de Texte
 ### 5.2  Diagramme d'activité
+![Diagramme d'activité](<Diagramme d'activité.png>)
 -L'utilisateur crée et personnalise une vidéo en choisissant des options comme le texte, la résolution et la durée, puis génère, prévisualise et partage la vidéo. La vidéo contient des propriétés (texte, résolution, durée, personnalisation) et des méthodes pour la génération, la prévisualisation, l'enregistrement et le partage.
 -La vidéo comprend des propriétés telles que le texte, la résolution, la durée et la personnalisation. Elle offre des méthodes pour générer, prévisualiser, enregistrer et partager la vidéo créée.
-![Diagramme d'activité](<Diagramme d'activité.png>)
+
 ### 5.3 Diagramme de séquence
+![Diagramme de séquence](<Diagramme de séquence.png>)
  **Utilisateur** : L'utilisateur interagit avec l'interface pour entrer du texte, choisir des paramètres, personnaliser et enregistrer la vidéo.
 
  **UI** : L'interface utilisateur (UI) transmet les actions de l'utilisateur (texte, paramètres, personnalisation) au **VideoController** pour traitement et affichage.
@@ -111,7 +113,7 @@
  **VideoGenerator** : Le générateur de vidéo analyse le texte, génère la vidéo, applique les personnalisations et retourne la vidéo traitée au **VideoController**.
 
  **Database** : La base de données enregistre la vidéo générée et retourne une confirmation au **VideoController** après l'enregistrement.
-![Diagramme de séquence](<Diagramme de séquence.png>)
+
 
 
 ## 6. Déploiement
